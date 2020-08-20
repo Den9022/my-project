@@ -1,0 +1,162 @@
+.card-table {  
+    left: 100px;
+    position: absolute;
+    height: 822px;
+    width: 1490px;
+    background-image: url("poker_table.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.name-table {
+    background-color: gray;
+    border-radius: 4px;
+    color: white;
+    font-size: 14px;
+    height: 18px;
+    position: absolute;
+    text-align: center;
+    top: 65px;
+    width: 351px;
+}
+
+.blind-pairs{
+    position: absolute;
+    text-align: center;
+    top: 110px;
+}
+
+.myTurn {
+    outline: 3px solid red;
+}
+
+.my-teammate {
+    background-color: purple;
+}
+
+.selected {
+    outline: 5px solid blue;
+}
+
+.buttons {
+    position: absolute;
+    text-align: center;
+    top: 99px;
+    width: 351px;
+}
+
+.holecards {
+    float: left;
+    height: 73px;
+    left: 20px;
+    position: absolute;
+    top: 3px;
+    width: 102px;
+}
+
+.card {
+    height: 73px;
+    width: 50px;
+}
+
+.player-name {
+    width: 100%;
+}
+
+.board{
+    display: flex;
+    position: absolute;
+    left:771px;
+    top:324px;
+    z-index: 1;
+}
+
+.restart{
+    position: absolute;
+    top: 731px;
+    left: 100px;
+}
+
+.seat {
+    height: 150px;
+    position: absolute;
+    width: 150px;
+}
+
+.seat-container:first-child {
+    .seat {
+        left: 568px;
+        top:  731px;      
+    }
+}
+.seat-container:nth-child(2) {
+    .seat {
+        left: -50px;
+        top: 358px;
+    }
+}
+.seat-container:nth-child(3) {
+    .seat {
+        left: 0px;
+        top:  0px;
+    }
+}
+.seat-container:nth-child(4) {
+    .seat {
+        left: 568px;
+        top:  0px;
+    }
+}
+.seat-container:nth-child(5) {
+    .seat {
+        left: 1139px;
+        top:  0px;
+    }
+}
+.seat-container:nth-child(6) {
+    .seat {
+        left: 1139px;
+        top:  338px;
+    }
+}
+.seat-container:nth-child(7) {
+    .seat {
+        left: -50px;
+        top:  731px;
+    }
+}
+.seat-container:nth-child(8) {
+    .seat {
+        left: 1139px;
+        top: 731px;
+    }
+}
+
+.holecards:first-child {
+    left: 0px;
+    position: absolute;
+}
+.holecards:nth-child(2) {
+    left: 50px;
+    position: absolute;
+}
+.holecards:nth-child(3) {
+    left: 100px;
+    position: absolute;
+}
+.holecards:nth-child(4) {
+    left: 150px;
+    position: absolute;
+}
+.holecards:nth-child(5) {
+    left: 200px;
+    position: absolute;
+}
+.holecards:nth-child(6) {
+    left: 250px;
+    position: absolute;
+}
+.holecards:nth-child(7) {
+    left: 300px;
+    position: absolute;
+}

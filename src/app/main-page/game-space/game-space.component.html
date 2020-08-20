@@ -1,0 +1,33 @@
+<div class="card-table">
+    <div class="seat-container" *ngFor="let player of gamePlayers">
+        <div class="seat">
+            <div class="holecards" *ngFor="let card of player.cards">
+                <img class="card" [src]="card.imgSrc" (click)="handleCardClick(player, card)" [class.selected]="card.selected">
+            </div>
+            <div class="name-table">
+                <div [class.myTurn]="player.myTurn" [class.my-teammate]="(player.teammateId == loggedInUserId)" class="player-name">{{player.name}}</div>   
+            
+            </div>
+            <div class="buttons">
+                <button id="normal-move-button" type="button" (click)="makeMove(player, normalMove)" *ngIf="(player.id == loggedInUserId)" [disabled]="!player.myTurn || player.out">Normal Move</button>
+                <button id="blind-move-button" type="button" (click)="makeMove(player, blindMove)" *ngIf="(player.id == loggedInUserId)" [disabled]="!player.myTurn || player.blindCardPairs.length > 0">Blind Move</button>    
+
+                <button id="guess-move-button" type="button" *ngIf="(player.id != loggedInUserId) && player.blindCardPairs.length > 0 && (player.teammateId != loggedInUserId)" (click)="guess(player)">Guess</button>    
+
+            </div>
+            <div class="blind-pairs" *ngIf="(player.id == loggedInUserId)">               
+                <div class="blind-card" *ngFor="let blind of player.blindCardPairs">
+                    <img *ngIf=blind [src]="blind.imgSrc" >
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="board">
+        <div class="center-card" *ngFor="let centerCard of cardsInCenter">
+            <img *ngIf=centerCard [src]="centerCard.imgSrc" >
+        </div>
+    </div>   
+    <div class="restart">
+        <button id="restart-button" type="button" *ngIf="loggedInUserId == hostId" (click)="restartGame()">Restart</button>    
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<div id="main-container">
+
+  <div id="left-side-container">
+    <div id="room-list-container">
+      <app-room-list></app-room-list>
+    </div>
+  </div>
+
+  <div id="right-side-container">
+
+    <div id="room-form-container">
+      <form #newRoomForm="ngForm">
+          <span class="input-row">
+            <input name="roomNameInput" [(ngModel)]="newRoomName" required>
+            <label>Szoba neve</label>
+          </span>
+      </form>
+      <button id="new-room-button" type="button" (click)="validateAndCreateNewRoom()">Szoba létrehozása</button>
+    </div>
+
+    <div id="chat-container">
+      <app-chat room="main"></app-chat>
+    </div>
+
+  </div>
+
+
+</div>

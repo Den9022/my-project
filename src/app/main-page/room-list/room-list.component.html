@@ -1,0 +1,15 @@
+<div id="main-container">
+
+  <div id="heador-row">
+    <label>Elérhető szobák</label>
+    <button type="button" (click)="loadAvailableRooms()">Frissítés</button>
+  </div>
+
+  <div id="room-list">
+    <span class="room-list-row" *ngFor="let room of availableRooms" (click) = "joinRoom(room)">
+      <label class="room-name">{{room.name}}</label>
+      <label class="creator-name">{{room.creatorUserName}}</label>
+    </span>
+  </div>
+
+</div>

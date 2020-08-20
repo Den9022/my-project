@@ -1,0 +1,24 @@
+<div id="main-container">
+    <div id="cards-stack">
+        <span class="image-container" *ngFor="let card of cardsInCenter">
+            <img [src]="card.imgSrc">
+        </span>
+     </div>
+  <!--<img src="http://pokertrainer.se/angular2/static/Images/pokertable.png" alt="table" class="table">-->
+    <div class="all-player-card-container" *ngFor="let player of gamePlayers">
+        <div class="hand-card-container">
+            <label [class.myTurn]="player.myTurn" [class.my-teammate]="(player.teammateId == loggedInUserId)" >{{player.name}}</label>
+            <span class="image-container" *ngFor="let card of player.cards">
+                <img [src]="card.imgSrc" (click)="handleCardClick(player, card)" [class.selected]="card.selected">
+            </span>
+            <button id="normal-move-button" type="button" (click)="makeMove(player, normalMove)" *ngIf="(player.id == loggedInUserId)" [disabled]="!player.myTurn">Normal Move</button>
+            <button id="blind-move-button" type="button" (click)="makeMove(player, blindMove)" *ngIf="(player.id == loggedInUserId)" [disabled]="!player.myTurn" [disabled]="player.blindCardPairs.length > 0">Blind Move</button>
+            <div id="blind-pairs">
+                <span class="image-container" *ngFor="let card of player.blindCardPairs">
+                    <img [src]="card.imgSrc">
+                </span>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,44 @@
+#main-container {
+    padding: .5em;
+}
+
+#room-list {
+    display: flex;
+    flex-direction: column;
+}
+
+#heador-row {
+    display: flex;
+    margin-bottom: 1em;
+    label {
+        flex-grow: 1;
+        margin-right: 2em;
+    }
+}
+
+.room-list-row {
+    display: flex;
+    flex-direction: column;
+    padding: .5em;
+
+    &:hover {
+        background-color: whitesmoke;
+    }
+
+    &:active {
+        background-color: silver;
+    }
+
+    &, & * {
+        cursor: pointer;
+    }
+}
+
+label.room-name {
+    font-weight: 120%;
+    font-weight: bold;
+}
+
+label.creator-name {
+    font-weight: 400;
+}

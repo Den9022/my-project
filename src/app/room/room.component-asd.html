@@ -1,0 +1,34 @@
+<div id="main-container">
+
+  <div id="team-selection-container" *ngIf="!gameStarted">
+
+    <div id="player-list-container">
+      <span class="player-row" *ngFor="let player of joinedPlayers"
+          [class.selection-sent]="player.selectionSentTo"
+          [class.selection-received]="player.selectionReceivedFrom"
+          [class.my-teammate]="player.myTeammate"
+          [class.disabled]="player.disabled">
+        <label>{{player.userData.nickname}}</label>
+        <button type="button" [disabled]="player.disabled" (click)="togglePlayerSelection(player)">
+          {{player.selectionSentTo ? 'Visszavon' : 'Megjelöl'}}</button>
+      </span>
+    </div>
+
+    <div id="button-container">
+      <button type="button" (click)="leaveRoom()">Szoba elhagyása</button>
+      <button id="start-game-button" type="button" *ngIf="isHost" (click)="startGame()">Start</button>
+    </div>
+
+  </div>
+
+  <div *ngIf="gameStarted" id="game-container">
+    <app-game-space [gamePlayers]="gamePlayers" [roomId]="roomId" [currentTeamId]="currentTeamId"></app-game-space>
+  </div>
+
+
+  <div id="chat-container" *ngIf="!gameStarted">
+    <app-chat [room]="roomId" ></app-chat>
+  </div>
+
+
+</div>

@@ -1,0 +1,13 @@
+<div id="main-container">
+
+  <div id="message-container">
+    <span class="message-row" *ngFor="let socketMessage of messages" [class.my-message]="socketMessage.senderId === loggedInUserId">
+      <label class="message">{{socketMessage.data}}</label>
+      <label class="sender">{{socketMessage.senderName}}</label>
+    </span>
+  </div>
+  <span id="input-row">
+    <input [(ngModel)]="messageInput" (keypress)="sendMessageOnEnter($event)">
+  </span>
+
+</div>

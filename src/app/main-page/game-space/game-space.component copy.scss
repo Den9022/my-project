@@ -1,0 +1,92 @@
+.hand-card-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+
+    img.selected {
+        outline: 2px solid blue;
+    }
+
+    label.myTurn {
+        outline: 3px solid red;
+    }
+
+    label.my-teammate {
+        background-color: aquamarine;
+    }
+}
+
+#blind-pairs{
+    margin-left: 15px;
+}
+
+#cards-stack{
+    position: absolute;
+    top: 35%;
+    bottom: 50%;
+    right: 50%;
+    left: 37%;
+    border: 1px solid black;
+}
+
+%vertical-deck {
+    flex-direction: column;
+    height: 100%;
+    top: 0;
+    .image-container {
+        height: 80px;
+    }
+    img {
+        transform: rotateZ(90deg);
+    }
+
+    .image-container {
+        margin-bottom: 1em;
+    }
+    .image-container:last-child {
+        margin-bottom: 0;
+    }
+}
+
+%horizontal-deck {
+    width: 100%;
+    .image-container {
+        margin-right: 1em;
+    }
+    .image-container::last-child {
+        margin-right: 0;
+    }
+}
+
+.all-player-card-container:first-child {
+    .hand-card-container {
+        @extend %horizontal-deck;
+        bottom: 1em;
+    }
+}
+
+.all-player-card-container:nth-child(2) {
+    .hand-card-container {
+        @extend %horizontal-deck;
+        top: 1em;
+    }
+}
+
+.all-player-card-container:nth-child(3) {
+    .hand-card-container {
+        @extend %vertical-deck;
+        left: 3em;
+    }
+}
+
+.all-player-card-container:last-child {
+    .hand-card-container {
+        @extend %vertical-deck;
+        right: 3em;
+    }
+}
+
+img {
+    border: 1px solid rgba(0, 0, 0, .3);
+    border-radius: 16px;
+}

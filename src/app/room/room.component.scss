@@ -1,0 +1,66 @@
+#main-container {
+    display: flex;
+    min-height: 400px;
+    height: fit-content;
+}
+
+#team-selection-container {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+#player-list-container {
+    flex-grow: 1;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 1em;
+    background-color: #65d8d8;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.player-row {
+    display: inline;
+    background-color: whitesmoke;
+    padding: .5em 1em .5em 1em;
+    border-radius: 8px;
+
+    &.selection-sent {
+        background-color: antiquewhite;
+    }
+    &.selection-received {
+        background-color: beige;
+    }
+    &.disabled {
+        background-color: gray;
+    }
+    &.my-teammate {
+        background-color: aquamarine;
+    }
+
+    label {
+        flex-grow: 1;
+    }
+}
+
+#chat-container {
+    border: 1px solid black;
+    margin: 0 .5em 0 .5em;
+    border-radius: 8px;
+    background-color: #65d8d8;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+
+#button-container {
+    margin: .5em 0 0 0;
+    border: 1px solid black;
+    padding: .5em;
+    border-radius: 8px;
+    background-color: #65d8d8;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+
+    #start-game-button {
+        margin-left: 1em;
+    }
+}

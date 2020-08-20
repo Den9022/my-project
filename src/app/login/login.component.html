@@ -1,0 +1,23 @@
+<div id="main-container">
+  <h1 id="title">Bejelentkezés!</h1>
+  <div id="form-container">
+
+    <form #loginForm="ngForm">
+      <span class="input-row">
+        <input name="emailInput" [(ngModel)]="userVo.email" required>
+        <label>E-mail</label>
+      </span>
+      <span class="input-row">
+        <input name="passwordInput" type="password" [(ngModel)]="userVo.password" required>
+        <label>Jelszó</label>
+      </span>
+    </form>
+
+
+    <div id="button-container">
+      <button id="login-button" pButton type="button" class="ui-button-rounded" (click)="handleLoginClicked()">Bejelentkezés</button>
+      <button id="registration-button" pButton type="button" class="ui-button-rounded" (click)="goToRegistration()">Regisztráció</button>
+    </div>
+  </div>
+
+</div>

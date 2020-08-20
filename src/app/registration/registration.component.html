@@ -1,0 +1,28 @@
+<div id="main-container">
+
+  <h1 id="title">Regisztráció!</h1>
+
+  <div id="form-container">
+
+    <form #registrationForm="ngForm">
+        <span class="input-row">
+          <input name="emailInput" [(ngModel)]="userVo.email" required>
+          <label>E-mail</label>
+        </span>
+        <span class="input-row">
+          <input name="passwordInput" [(ngModel)]="userVo.password" required>
+          <label>Jelszó</label>
+        </span>
+        <span class="input-row">
+            <input name="nicknameInput" [(ngModel)]="userVo.nickname" required>
+            <label>Név</label>
+          </span>
+      </form>
+
+      <div id="button-container">
+          <button id="register-button" type="button" (click)="validateAndRegister()">Regisztráció</button>
+          <button id="back-button" (click)="goToLogin()">Vissza</button>
+      </div>
+    </div>
+
+</div>
